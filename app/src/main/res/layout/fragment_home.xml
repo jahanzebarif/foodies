@@ -1,0 +1,323 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.HomeFragment">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#eeeeee"
+        android:fillViewport="true"
+        >
+
+
+  <androidx.constraintlayout.widget.ConstraintLayout
+      android:layout_width="match_parent"
+      android:layout_height="wrap_content"
+      android:paddingHorizontal="15dp"
+      android:paddingBottom="15dp"
+      >
+
+      <com.google.android.material.progressindicator.CircularProgressIndicator
+          android:id="@+id/progress_loading"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          app:trackColor="#eeeeee"
+          app:indicatorColor="#FF5733"
+          android:indeterminate="true"
+          android:visibility="gone"
+          android:elevation="1dp"
+          />
+      
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:id="@+id/layout_toolbar"
+          android:layout_width="match_parent"
+          android:layout_height="?actionBarSize"
+          app:layout_constraintTop_toTopOf="parent">
+
+          <TextView
+              android:id="@+id/textView_userGreeting"
+              android:layout_width="wrap_content"
+              android:layout_height="match_parent"
+              android:gravity="center"
+              android:textColor="#FF5733"
+              android:textStyle="bold"
+              app:layout_constraintStart_toStartOf="parent"
+              />
+
+          <ImageView
+              android:id="@+id/imageView_userProfile"
+              android:layout_width="40dp"
+              android:layout_height="40dp"
+              app:layout_constraintEnd_toEndOf="parent"
+              android:src="@drawable/ic_profile"
+              android:scaleType="fitXY"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintBottom_toBottomOf="parent"
+              android:background="@drawable/profile_bg"
+              android:clipToOutline="true"
+              />
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+      <androidx.appcompat.widget.SearchView
+          android:id="@+id/searchView_home"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@id/layout_toolbar"
+          android:background="@drawable/edittext_bg"
+          android:layout_marginTop="15dp"
+          />
+
+      <com.google.android.material.textfield.TextInputLayout
+          android:id="@+id/textField_options"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@id/searchView_home"
+          android:layout_marginTop="15dp"
+          app:layout_constraintStart_toStartOf="parent"
+          app:boxStrokeColor="@android:color/transparent"
+          app:boxStrokeWidth="0dp"
+          app:endIconTint="@color/black"
+          android:background="@android:color/transparent"
+          app:boxStrokeWidthFocused="0dp"
+          android:gravity="center"
+          app:hintEnabled="false"
+          style="@style/Widget.MaterialComponents.TextInputLayout.OutlinedBox.ExposedDropdownMenu">
+          <AutoCompleteTextView
+              android:layout_width="match_parent"
+              android:layout_height="match_parent"
+              android:inputType="none"
+              android:text="Delray Beach, FL"
+
+              />
+
+      </com.google.android.material.textfield.TextInputLayout>
+
+      <ImageView
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toTopOf="@id/textField_options"
+          app:layout_constraintBottom_toBottomOf="@id/textField_options"
+          app:layout_constraintEnd_toEndOf="parent"
+          android:src="@drawable/ic_location"
+          />
+
+      <TextView
+          android:id="@+id/textView_recentEats"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/textField_options"
+          android:layout_marginTop="15dp"
+          android:text="Recent Eats"
+          android:textColor="@color/black"
+          android:textSize="20sp"
+          />
+
+      <androidx.constraintlayout.widget.ConstraintLayout
+          android:id="@+id/layout_recentEats"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@id/textView_recentEats"
+          android:background="@drawable/edittext_bg"
+          android:layout_marginTop="15dp"
+          android:padding="10dp"
+          >
+
+          <ImageView
+              android:id="@+id/imageView_recentEats"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:src="@drawable/ic_resturant"
+              app:layout_constraintStart_toStartOf="parent"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintBottom_toBottomOf="parent"
+              app:tint="#FF5733"
+              />
+
+          <TextView
+              android:id="@+id/textView_recentEatsName"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintTop_toTopOf="parent"
+              app:layout_constraintStart_toEndOf="@id/imageView_recentEats"
+              android:layout_marginStart="10dp"
+              android:text="Mcdonald's"
+              android:textColor="@color/black"
+              android:textSize="17.5sp"
+              />
+          <TextView
+              android:id="@+id/textView_recentEatsNameItems"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintStart_toEndOf="@id/imageView_recentEats"
+              android:layout_marginStart="10dp"
+              app:layout_constraintTop_toBottomOf="@id/textView_recentEatsName"
+              android:text="Burgers - Fries - Chicken"
+              />
+
+          <TextView
+              android:id="@+id/textView_recentEatsPrice"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              app:layout_constraintTop_toBottomOf="@id/textView_recentEatsNameItems"
+              app:layout_constraintStart_toEndOf="@id/imageView_recentEats"
+              android:layout_marginStart="10dp"
+              android:text="12.99$"
+              android:textColor="#FF5733"
+              android:textSize="17.5sp"
+              />
+
+      </androidx.constraintlayout.widget.ConstraintLayout>
+
+      <TextView
+          android:id="@+id/textView_resturants"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/layout_recentEats"
+          android:layout_marginTop="15dp"
+          android:text="Resturants"
+          android:textColor="@color/black"
+          android:textSize="20sp"
+          />
+
+      <TextView
+          android:id="@+id/textView_viewAll"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="View all"
+          android:textColor="#FF5733"
+          app:layout_constraintTop_toTopOf="@id/textView_resturants"
+          app:layout_constraintBottom_toBottomOf="@id/textView_resturants"
+          app:layout_constraintEnd_toEndOf="parent"
+          />
+
+      <com.google.android.material.chip.ChipGroup
+          android:id="@+id/chipGroup"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@id/textView_resturants"
+          android:layout_marginTop="15dp"
+          app:singleSelection="true"
+          app:chipSpacingHorizontal="10dp"
+          app:singleLine="true"
+          >
+
+          <com.google.android.material.chip.Chip
+              android:id="@+id/chip_cafe"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Cafe"
+              app:chipStartPadding="10dp"
+              app:chipEndPadding="10dp"
+              style="@style/Widget.MaterialComponents.Chip.Choice"
+              android:checkable="true"
+              app:chipBackgroundColor="@color/chip_selection"
+              android:textColor="@color/chip_text"
+              android:checked="true"
+              />
+
+          <com.google.android.material.chip.Chip
+              android:id="@+id/chip_bakery"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Bakery"
+              app:chipStartPadding="10dp"
+              app:chipEndPadding="10dp"
+              style="@style/Widget.MaterialComponents.Chip.Choice"
+              android:checkable="true"
+              app:chipBackgroundColor="@color/chip_selection"
+              android:textColor="@color/chip_text"
+              />
+
+          <com.google.android.material.chip.Chip
+              android:id="@+id/chip_italian"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Italian"
+              app:chipStartPadding="10dp"
+              app:chipEndPadding="10dp"
+              style="@style/Widget.MaterialComponents.Chip.Choice"
+              android:checkable="true"
+              app:chipBackgroundColor="@color/chip_selection"
+              android:textColor="@color/chip_text"
+              />
+
+          <com.google.android.material.chip.Chip
+              android:id="@+id/chip_chinese"
+              android:layout_width="wrap_content"
+              android:layout_height="wrap_content"
+              android:text="Chinese"
+              app:chipStartPadding="10dp"
+              app:chipEndPadding="10dp"
+              style="@style/Widget.MaterialComponents.Chip.Choice"
+              android:checkable="true"
+              app:chipBackgroundColor="@color/chip_selection"
+              android:textColor="@color/chip_text"
+              />
+
+      </com.google.android.material.chip.ChipGroup>
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/recyclerView_resturants"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@id/chipGroup"
+          android:layout_marginTop="15dp"
+
+          app:layoutManager="androidx.recyclerview.widget.GridLayoutManager"
+          app:spanCount="2"
+          android:orientation="vertical"
+          tools:itemCount="4"
+          tools:listitem="@layout/item_resturants"
+          />
+
+
+      <TextView
+          android:id="@+id/textView_resturantsPopular"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintStart_toStartOf="parent"
+          app:layout_constraintTop_toBottomOf="@id/recyclerView_resturants"
+          android:layout_marginTop="15dp"
+          android:text="Popular Resturants"
+          android:textColor="@color/black"
+          android:textSize="20sp"
+          />
+
+      <TextView
+          android:id="@+id/textView_viewAllPopular"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          android:text="View all"
+          android:textColor="#FF5733"
+          app:layout_constraintTop_toTopOf="@id/textView_resturantsPopular"
+          app:layout_constraintBottom_toBottomOf="@id/textView_resturantsPopular"
+          app:layout_constraintEnd_toEndOf="parent"
+          />
+
+      <androidx.recyclerview.widget.RecyclerView
+          android:id="@+id/recyclerView_popularResturants"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:layout_constraintTop_toBottomOf="@id/textView_resturantsPopular"
+          android:layout_marginTop="15dp"
+
+          app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+          android:orientation="horizontal"
+          tools:listitem="@layout/item_popular_resturants"
+          />
+
+  </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+
+</FrameLayout>

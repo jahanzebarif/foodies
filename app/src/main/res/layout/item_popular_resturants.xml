@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="150dp"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="@drawable/edittext_bg"
+    android:padding="5dp"
+    android:layout_margin="5dp">
+
+    <ImageView
+        android:id="@+id/imageView_popularResturants"
+        android:layout_width="match_parent"
+        android:layout_height="125dp"
+        android:background="@drawable/edittext_bg"
+        android:clipToOutline="true"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:scaleType="centerCrop"
+        />
+
+    <TextView
+        android:id="@+id/textView_popularResturantName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/imageView_popularResturants"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="5dp"
+        android:text="Resturant Name"
+        android:textColor="@color/black"
+        android:singleLine="true"
+        />
+
+    <TextView
+        android:id="@+id/textView_popularResturantEatry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView_popularResturantName"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="5dp"
+        android:text="Western Cuisine, Fast Food, Burger"
+        />
+
+    <LinearLayout
+        android:id="@+id/layout_rating"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/textView_popularResturantEatry"
+        android:layout_marginTop="10dp"
+        android:orientation="horizontal"
+        >
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/star_icon"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/star_icon"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/star_icon"
+            />
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/star_icon"
+            />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textView_popularResturants_distance"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout_rating"
+        android:layout_marginTop="10dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toStartOf="@id/textView_popularResturants_time"
+        android:background="@drawable/edittext_bg"
+        android:backgroundTint="#eeeeee"
+        android:text="255m"
+        android:drawableStart="@drawable/ic_location_small"
+        android:gravity="center"
+        android:drawablePadding="2.5dp"
+        android:paddingHorizontal="7.5dp"
+        android:textColor="#FF5733"
+        android:drawableTint="#FF5733"
+        />
+
+    <TextView
+        android:id="@+id/textView_popularResturants_time"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/layout_rating"
+        android:layout_marginTop="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toEndOf="@id/textView_popularResturants_distance"
+        android:background="@drawable/edittext_bg"
+        android:backgroundTint="#eeeeee"
+        android:text="27"
+        android:drawableStart="@drawable/ic_clock"
+        android:gravity="center"
+        android:drawablePadding="2.5dp"
+        android:paddingHorizontal="7.5dp"
+        android:textColor="#FF5733"
+        android:drawableTint="#FF5733"
+        />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

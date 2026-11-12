@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    tools:context=".ui.fragments.OnBoardingFragment">
+
+   <androidx.constraintlayout.widget.ConstraintLayout
+       android:layout_width="match_parent"
+       android:layout_height="match_parent">
+
+      <androidx.viewpager2.widget.ViewPager2
+          android:id="@+id/viewPager_onBoarding"
+          android:layout_width="match_parent"
+          android:layout_height="0dp"
+          app:layout_constraintTop_toTopOf="parent"
+          app:layout_constraintBottom_toTopOf="@id/button_onBoardingNext"
+          />
+
+      <com.google.android.material.button.MaterialButton
+          android:id="@+id/button_onBoardingNext"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          android:layout_margin="25dp"
+          android:backgroundTint="#FF5733"
+          android:text="NEXT"
+          android:textColor="@color/white"
+          android:paddingHorizontal="50dp"
+          app:cornerRadius="10dp"
+          />
+
+      <com.google.android.material.button.MaterialButton
+          android:id="@+id/button_onBoardingStart"
+          android:layout_width="match_parent"
+          android:layout_height="wrap_content"
+          app:layout_constraintBottom_toBottomOf="parent"
+          app:layout_constraintEnd_toEndOf="parent"
+          android:layout_margin="25dp"
+          android:backgroundTint="#FF5733"
+          android:text="GET STARTED"
+          android:textColor="@color/white"
+          android:paddingHorizontal="50dp"
+          app:cornerRadius="10dp"
+          android:visibility="gone"
+          />
+
+      <com.tbuonomo.viewpagerdotsindicator.WormDotsIndicator
+          android:id="@+id/dots_indicator"
+          android:layout_width="wrap_content"
+          android:layout_height="wrap_content"
+          app:dotsColor="#FF5733"
+          app:dotsCornerRadius="8dp"
+          app:dotsSize="16dp"
+          app:dotsSpacing="4dp"
+          app:dotsWidthFactor="2.5"
+          app:selectedDotColor="#FF5733"
+          app:progressMode="true"
+          app:layout_constraintTop_toTopOf="@id/button_onBoardingNext"
+          app:layout_constraintBottom_toBottomOf="@id/button_onBoardingNext"
+          app:layout_constraintStart_toStartOf="parent"
+          android:layout_marginStart="25dp"
+          />
+   </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+
+</FrameLayout>
